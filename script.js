@@ -49,6 +49,8 @@ function atualizar(){
 
     direita.innerHTML = ``;
     exibirListaNotas(notas);
+
+    limpar();
 }
 
 function adicionar(){
@@ -62,6 +64,8 @@ function adicionar(){
     window.localStorage.setItem("notas", JSON.stringify(notas));
 
     createDiv(nota);
+
+    limpar();
 }
 
 function deletar(){
@@ -76,4 +80,14 @@ function deletar(){
     window.localStorage.setItem("notas", JSON.stringify(notas));
     direita.innerHTML = ``;
     exibirListaNotas(notas);
+
+    limpar();
+}
+
+function limpar(){
+    let text01 = document.getElementById("text01");
+
+    text01.value = '';
+    text01.dataset.notaId = ''
+    text01.focus();
 }
