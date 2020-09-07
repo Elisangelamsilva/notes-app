@@ -1,7 +1,27 @@
 var app = new Vue({
     el: '#app',
     data: {
-    notas: []
+        notaTexto: "",
+        notas: []
+    },
+    methods: {
+        adicionar: function() {
+            let nota = {id: new Date().getTime(), nota: this.notaTexto}
+
+            let notas = window.localStorage.getItem("notas");
+            notas = JSON.parse(notas);
+            notas.push(nota);
+            window.localStorage.setItem("notas", JSON.stringify(notas));
+
+            this.notas.push(nota);
+
+            this.limpar();
+        },
+        limpar: function() {
+            this.notaTexto = "";
+            // text01.dataset.notaId = ''
+            // text01.focus();
+        }
     },
     created: function() {
         let notasString = window.localStorage.getItem("notas");
@@ -51,21 +71,6 @@ function atualizar(){
     limpar();
 }
 
-function adicionar(){
-    let text01 = document.getElementById("text01").value;
-
-    let nota = {id: new Date().getTime(), nota: text01}
-
-    let notas = window.localStorage.getItem("notas");
-    notas = JSON.parse(notas);
-    notas.push(nota);
-    window.localStorage.setItem("notas", JSON.stringify(notas));
-
-    createDiv(nota);
-
-    limpar();
-}
-
 function deletar(){
     let direita = document.querySelector(".direita");
     let notas = window.localStorage.getItem("notas");
@@ -82,10 +87,3 @@ function deletar(){
     limpar();
 }
 
-function limpar(){
-    let text01 = document.getElementById("text01");
-
-    text01.value = '';
-    text01.dataset.notaId = ''
-    text01.focus();
-}
