@@ -9,19 +9,18 @@
 <body class="app">
 
     <div id="app">
-        {{notaTexto}}
         <div class="esquerda">
             <h4> Adicione sua nota: <input v-model="notaTexto" type="text" name="" class="" id="text01"> </h4>
     
             <input type="button" class="button" value="adicionar" v-on:click="adicionar">
-            <input type="button" class="button" value="atualizar" onclick="atualizar()">
+            <input type="button" class="button" value="atualizar" v-on:click="atualizar">
             <input type="button" class="button" value="deletar" onclick="deletar()">
     
         </div>
-
+        
         <div class="direita">
-            <div v-for="nota in notas">
-                {{nota.nota}}
+            <div  v-for="nota in notas">
+               <span v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
             </div>
         </div>
     
