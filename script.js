@@ -9,12 +9,9 @@ var app = new Vue({
         adicionar: function() {
             let nota = {id: new Date().getTime(), nota: this.notaTexto}
 
-            let notas = window.localStorage.getItem("notas");
-            notas = JSON.parse(notas);
-            notas.push(nota);
-            window.localStorage.setItem("notas", JSON.stringify(notas));
-
             this.notas.push(nota);
+
+            this.atualizarStorage();
 
             this.limpar();
         },
@@ -22,13 +19,9 @@ var app = new Vue({
             this.notaTexto = "";
         },
         atualizar: function() {
-            let notas = window.localStorage.getItem("notas");
-            notas = JSON.parse(notas);
-        
             this.notas[this.notaIndex].nota = this.notaTexto;
-            notas[this.notaIndex].nota = this.notaTexto;
         
-            window.localStorage.setItem("notas", JSON.stringify(notas));
+            this.atualizarStorage();
 
             this.limpar();
         },
@@ -39,17 +32,16 @@ var app = new Vue({
 
             this.notaTexto = this.notas[this.notaIndex].nota;
         },
-        deletar: function() {
-            let notas = window.localStorage.getItem("notas");
-            notas = JSON.parse(notas);
-        
-            notas.splice(this.notaIndex, 1);
+        deletar: function() {;
             this.notas.splice(this.notaIndex, 1);
 
-            window.localStorage.setItem("notas", JSON.stringify(notas));
+            this.atualizarStorage();
         
             this.limpar();
             
+        },
+        atualizarStorage: function() {
+            window.localStorage.setItem("notas", JSON.stringify(this.notas));
         }
     },
     created: function() {
