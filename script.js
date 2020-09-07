@@ -20,8 +20,6 @@ var app = new Vue({
         },
         limpar: function() {
             this.notaTexto = "";
-            // text01.dataset.notaId = ''
-            // text01.focus();
         },
         atualizar: function() {
             let notas = window.localStorage.getItem("notas");
@@ -40,6 +38,18 @@ var app = new Vue({
             });
 
             this.notaTexto = this.notas[this.notaIndex].nota;
+        },
+        deletar: function() {
+            let notas = window.localStorage.getItem("notas");
+            notas = JSON.parse(notas);
+        
+            notas.splice(this.notaIndex, 1);
+            this.notas.splice(this.notaIndex, 1);
+
+            window.localStorage.setItem("notas", JSON.stringify(notas));
+        
+            this.limpar();
+            
         }
     },
     created: function() {
@@ -50,42 +60,3 @@ var app = new Vue({
         this.notas = JSON.parse(notasString);
     }
 })
-
-function createDiv(nota){
-    let direita = document.querySelector(".direita");
-
-    let addNotas = document.createElement("div");
-    addNotas.innerHTML = `${nota.nota}`
-    direita.appendChild(addNotas);
-
-    addNotas.addEventListener('click', function(){
-        let text01 = document.getElementById("text01");
-        text01.value = nota.nota;
-        text01.dataset.notaId = nota.id;
-    });
-}
-
-function buscarIndexDeNota(notas){
-
-}
-
-function atualizar(){
- 
-}
-
-function deletar(){
-    let direita = document.querySelector(".direita");
-    let notas = window.localStorage.getItem("notas");
-    notas = JSON.parse(notas);
-
-    let notaIndex = buscarIndexDeNota(notas);
-
-    notas.splice(notaIndex, 1);
-
-    window.localStorage.setItem("notas", JSON.stringify(notas));
-    direita.innerHTML = ``;
-    exibirListaNotas(notas);
-
-    limpar();
-}
-
