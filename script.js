@@ -1,12 +1,16 @@
-window.onload = function(){
-    let notas = window.localStorage.getItem("notas");
-    if(notas == null){
-        notas = "[]";
+var app = new Vue({
+    el: '#app',
+    data: {
+    notas: []
+    },
+    created: function() {
+        let notasString = window.localStorage.getItem("notas");
+        if(notasString == null){
+            notasString = "[]";
+        }
+        this.notas = JSON.parse(notasString);
     }
-    notas = JSON.parse(notas);
-
-    exibirListaNotas(notas);
-}
+})
 
 function createDiv(nota){
     let direita = document.querySelector(".direita");
@@ -20,12 +24,6 @@ function createDiv(nota){
         text01.value = nota.nota;
         text01.dataset.notaId = nota.id;
     });
-}
-
-function exibirListaNotas(notas){
-    for(let nota of notas){
-        createDiv(nota);
-    }
 }
 
 function buscarIndexDeNota(notas){

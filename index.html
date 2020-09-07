@@ -6,19 +6,27 @@
     <title>Notes</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<bod class="app">
-    <div class="esquerda">
-        <h4> Adicione sua nota: <input type="text" name="" class="" id="text01"> </h4>
+<body class="app">
 
-        <input type="button" class="button" value="adicionar" onclick="adicionar()">
-        <input type="button" class="button" value="atualizar" onclick="atualizar()">
-        <input type="button" class="button" value="deletar" onclick="deletar()">
+    <div id="app">
+        <div class="esquerda">
+            <h4> Adicione sua nota: <input type="text" name="" class="" id="text01"> </h4>
+    
+            <input type="button" class="button" value="adicionar" onclick="adicionar()">
+            <input type="button" class="button" value="atualizar" onclick="atualizar()">
+            <input type="button" class="button" value="deletar" onclick="deletar()">
+    
+        </div>
 
+        <div class="direita">
+            <div v-for="nota in notas">
+                {{nota.nota}}
+            </div>
+        </div>
+    
     </div>
-    <div class="direita">
-
-    </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="script.js"></script>
     
 </body>

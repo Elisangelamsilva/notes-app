@@ -14,7 +14,7 @@
     padding: 20px;
     grid-area: esquerda;
     background: #f1f1f1;
-    grid-column: 1 / 1;
+    grid-column: 1 / 2;
   }
 
   .button{
@@ -30,6 +30,6 @@
     background: #f1f1f1;
     grid-area: direita;
     grid-column: 2 / 2;
-    grid-row: 1 / 1;
+ 
   }
   
