@@ -5,22 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="head.css">
 </head>
-<body class="app">
+<body>
 
     <div id="app">
-        <div class="esquerda">
-            <h4> Adicione sua nota: <input v-model="notaTexto" type="text" name="" class="" id="text01"> </h4>
-    
-            <input type="button" class="button" value="adicionar" v-on:click="adicionar">
-            <input type="button" class="button" value="atualizar" v-on:click="atualizar">
-            <input type="button" class="button" value="deletar" v-on:click="deletar">
-    
-        </div>
-        
-        <div class="direita">
-            <div  v-for="nota in notas">
-               <span v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
+
+        <head>
+            <h3 class="titulo">notes app</h3>
+                    
+            <input type="button" class="button" value="ADICIONAR" v-on:click="adicionar">
+            <input type="button" class="button" value="ATUALIZAR" v-on:click="atualizar">
+            <input type="button" class="button" value="DELETAR" v-on:click="deletar">
+
+        </head>
+         
+        <div id="grid">
+            <div class="esquerda">
+                <div  v-for="nota in notas">
+                    <span v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
+                </div>      
+            </div>
+            
+            <div class="direita">
+                <textarea v-model="notaTexto"></textarea>
             </div>
         </div>
     
