@@ -6,17 +6,22 @@
     <title>Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="head.css">
+    <link rel="stylesheet" href="mediaQueries.css">
 </head>
 <body>
 
     <div id="app">
 
         <head>
-            <h3 class="titulo">notes app</h3>
-                    
-            <input type="button" class="button" value="ADICIONAR" v-on:click="adicionar">
-            <input type="button" class="button" value="ATUALIZAR" v-on:click="atualizar">
-            <input type="button" class="button" value="DELETAR" v-on:click="deletar">
+            <div class="menu">
+                <div class="titulo">notes app</div>
+            
+                <div class="botao">
+                    <input type="button" class="button" value="ADICIONAR" v-on:click="adicionar">
+                    <input type="button" class="button" value="ATUALIZAR" v-on:click="atualizar">
+                    <input type="button" class="button" value="DELETAR" v-on:click="deletar">
+                </div>
+            </div>
 
         </head>
          
