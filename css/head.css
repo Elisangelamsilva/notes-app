@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+.menu{
+  display: table;
+}
+
+.titulo {
+  float: left;
+  color: white;
+  font-family:'Squada One', cursive;
+  font-size: 57.5px;
+  padding-top: 40px;
+  padding-left: 70px;
+}
+.button {
+  margin: 10px;
+  border: none;
+  width: 160px;
+  height: 65px;
+  padding: 4px;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+  background-color: #737373;
+  cursor: pointer;
+}
+
+.botao{
+  float: right;
+  padding-top: 40px;
+  padding-left: 950px;
+  padding-bottom: 10px;
+}
