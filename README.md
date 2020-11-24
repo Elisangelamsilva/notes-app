@@ -1,6 +1,7 @@
 # Notes App
 
-Create and store your notes for later purpose!
+Create and store your notes for later purpose! 
+Acesso ao site [Notes-app](https://notes-inicial.netlify.app/)
 
 ## User Stories
 
