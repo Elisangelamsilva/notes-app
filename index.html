@@ -27,7 +27,7 @@
          
         <div id="grid">
             <div class="esquerda">
-                <div  v-for="nota in notas">
+                <div class="espacamento"  v-for="nota in notas">
                     <span class="notasArmazenadas" v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
                 </div>      
             </div>
