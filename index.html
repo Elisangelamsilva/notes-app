@@ -5,42 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/head.css">
-    <link rel="stylesheet" href="css/mediaQueries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
+    <body>
+        <main>
+            <section class="glass">
+                    <h1 class="titulo">notes app</h1>
+                        <header>
+                            <nav>
+                                <ul class="menu">            
+                                    <input type="button" class="button" value="ADICIONAR" v-on:click="adicionar">
+                                    <input type="button" class="button" value="ATUALIZAR" v-on:click="atualizar">
+                                    <input type="button" class="button" value="DELETAR" v-on:click="deletar">
+                                </ul>
+                            </nav>
+                        </header>
+                    
+                        <div class="direita">
+                            <textarea v-model="notaTexto"></textarea>
+                        </div>
 
-    <div id="app">
-
-        <head>
-            <div class="menu">
-                <div class="titulo">notes app</div>
-            
-                <div class="botao">
-                    <input type="button" class="button" value="ADICIONAR" v-on:click="adicionar">
-                    <input type="button" class="button" value="ATUALIZAR" v-on:click="atualizar">
-                    <input type="button" class="button" value="DELETAR" v-on:click="deletar">
-                </div>
-            </div>
-
-        </head>
-         
-        <div id="grid">
-            <div class="esquerda">
-                <div class="espacamento"  v-for="nota in notas">
-                    <span class="notasArmazenadas" v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
-                </div>      
-            </div>
-            
-            <div class="direita">
-                <textarea v-model="notaTexto"></textarea>
-            </div>
-        </div>
-    
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="script.js"></script>
-    
-</body>
+                        <div class="esquerda">
+                            <div class="espacamento"  v-for="nota in notas">
+                                <span class="notasArmazenadas" v-on:click="selecionar" :data-nota-id="nota.id">{{nota.nota}}</span> 
+                            </div>      
+                        </div>
+                                
+            </section>
+        </main>
+                
+                <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+                <script src="script.js"></script>
+    </body>
 </html>

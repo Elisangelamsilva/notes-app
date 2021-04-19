@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#app',
+    el: '.glass',
     data: {
         notaTexto: "",
         notaIndex: null,

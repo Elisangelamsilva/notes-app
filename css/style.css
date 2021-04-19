@@ -1,52 +1,172 @@
-
-/* campo input e lista: #d9d9d9
-botão, icones e campo selecionado na lista: #737373  font: 34*/
-
-body{
-  background-color: #a6a6a6;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-  #grid {
-    display: grid;
-    font-family: Arial, Helvetica, sans-serif;
-    grid-template-areas: 
-    "esquerda"
-    "direita";
-    grid-template-columns: 29.75% 69.75%;
-    grid-column-gap: 0.5%;
-    height: 60rem;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: lightcoral;
+}
+
+.glass {
+  background:white;
+  min-height: 70vh;
+  width: 50%;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blue(2rem);
+  align-items: center;
+}
+
+header {
+  display: flex;
+  width: 60%;
+  height: 10vh;
+  margin: auto;
+  align-items: center;
+}
+
+.button {
+/* margin: 1rem; */
+border: none;
+width: 5rem;
+height: 2rem;
+background-color: lightcoral;
+color: white;
+cursor: pointer;
+}
+
+.titulo {
+  margin-left: 32%;
+  padding: 3%;
+  align-items: center;
+}
+
+/* Campo de texto */
+.direita {
+  margin-left: 30%;
+}
+textarea{
+  width: 90%;
+}
+
+.esquerda {
+  margin-left: 35%;
+  border-radius: 4%;
+
+}
+
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 520px) {
+  .glass {
+    margin: 15%;
+    height: 60vh;
+    width: 70%;
   }
-  
-  .esquerda{
-    padding-right: 20%;
-    grid-area: esquerda;
-    background: #a6a6a6;
-    grid-column: 1;
+  .menu {
+    height: 5rem;
+    width: 6rem;
+    display: flex;
   }
-  
-  .direita{
-    background: #a6a6a6;
-    grid-area: direita;
-    grid-column: 2;
-    grid-row: 1/1;
- 
+  header{
+    width: 80%;
+  }
+  .button {
+    padding: 5%;
+    margin-top: 30%;
+    margin-left: 5%;
+    font-size: 74%;
+  }
+  .direita {
+    margin-left: 7%;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 767px) {
+  .glass {
+    margin: 15%;
+    height: 60vh;
+    width: 70%;
+  }
+  .direita {
+    margin-left: 8%;
+  }
+  header{
+    width: 80%;
+  }
+  .menu {
+    height: 5rem;
+    width: 6rem;
+    display: flex;
+  }
+  .button {
+    padding: 6%;
+    margin-top: 30%;
+    margin-left: 30%;
+    font-size: 80%;
+  }
+}
+
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .glass {
+    margin: 15%;
+    height: 60vh;
+    width: 60%;
+  }
+  .direita {
+    margin-left: 8%;
+  }
+  .menu {
+    height: 5rem;
+    width: 6rem;
+    display: flex;
+  }
+  .button {
+    padding: 6%;
+    margin-top: 30%;
+    margin-left: 15%;
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 1101px) {
+  .glass {
+    margin-top: 5rem;
+    margin-left: 45rem;
+    height: 55vh;
+    width: 55vh;
+  }
+  nav {
+    margin-left: 2rem;
+  }
+  .button {
+    margin: 0%;
+  }
+  .direita {
+    margin-left: 10%;
+  }
+  .titulo {
+    margin-left: 35%;
+  }
+}
+@media (min-width: 980px) and (max-width: 979px){
+  .glass {
+    margin-top: 5rem;
+    margin-left: 45rem;
+    height: 55vh;
+    width: 55vh;
+  }
+  .button {
+    padding: 6%;
+    margin-top: 30%;
+    margin-left: 30%;
+    font-size: 80%;
   }
 
-  textarea{
-    height: 90%;
-    width: 90%;
-    font-size: 25px;
-    background-color: #d9d9d9;
-  }
+}
 
-  .notasArmazenadas{
-    border: 1px solid #f1f1f1;
-    padding: 1%;
-    background-color: #f1f1f1;
-    font-size: 20px;
-  }
 
-  div {
-    margin-bottom: 3%;
-  }
-  
